@@ -12,4 +12,26 @@ router.get('/', (req, res) => {
     
 });
 
+router.post('/', (req, res) =>{
+    let newBurger =  req.body.name;
+    // console.log(newBurger);
+    Burgers.create(newBurger, function(){
+        res.redirect('/')
+    });
+});
+
+router.get('/delete/:id', (req, res) =>{
+    let id = req.params.id;
+    Burgers.delete(id,function(){
+        res.redirect('/');
+    });
+});
+
+router.get('/:id', (req,res) =>{
+    let id = req.params.id;
+    Burgers.update(id,function(){
+        res.redirect('/');
+    });
+});
+
 module.exports = router;

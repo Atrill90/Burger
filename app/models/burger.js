@@ -7,6 +7,21 @@ const burger = {
         cb(res);
       });
     },
+    create: function(value, cb){
+        orm.create(value,function(res){
+        cb(res);
+        });
+    },
+    delete: function(id,cb){
+        orm.delete(id, function(res){
+            cb(res);
+        });
+    },
+    update: function(id,cb){
+        orm.update(id, function(res){
+            cb(res);
+        });
+    }
 }
 
 module.exports = burger;

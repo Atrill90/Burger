@@ -10,22 +10,30 @@ var orm = {
             cb(result);
         });
     },
+    create: function (value, cb){
+    connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [value], function (error, results){
+        if (error) throw error;
+        cb(results);
+    })
+    },
+    delete: function (id, cb){
+        let query = "DELETE FROM burgers WHERE id = ? ";
+        connection.query(query, [id], function (error,results){
+            if (error) throw error;
+            cb(results);
+        })
+    },
+    update: function (id, cb ){
+        let query = "UPDATE burgers SET devoured = True WHERE id = ? ";
+        connection.query(query,[id], function(error,results){
+            if (error) throw error;
+            cb(results);
+        })
+    }
+
+
+
 }
-//     insertOne: function (){
-//         connection.query("INSERT INTO burgers (burger_name, devoured) VALUES ('','')", function (err,results,fields){
-//         if (err) throw err;
-//         console.log(results);
-//         });
-//     },
-//     updateOne: function (){
-//         connection.query("UPDATE burgers SET (burger_name,devoured) VALUES ('','') ", function (err, results, fields){
-//             if (err) throw err;
-//             console.log(results);
-//         });
-//     },
-//     delete: function (){
-//         connection.query("DELETE FROM burgers WHERE)
-//     }
-// }
+    
 
 module.exports = orm;
