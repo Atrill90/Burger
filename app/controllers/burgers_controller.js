@@ -16,7 +16,7 @@ router.post('/', (req, res) =>{
     let newBurger =  req.body.name;
     // console.log(newBurger);
     Burgers.create(newBurger, function(){
-        res.redirect('/')
+        res.redirect('/');
     });
 });
 
