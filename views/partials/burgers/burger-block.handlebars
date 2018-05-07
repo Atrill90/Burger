@@ -1,9 +1,9 @@
 <li>
 	{{burger_name}}
 
-	<a class="change-devour" href="{{this.id}}" data-newDevoured="{{devour}}">
+	<a class="change-devour btn btn-danger mb-2" href="{{this.id}}" data-newDevoured="{{devour}}">
 		{{#unless devoured}}Devour{{/unless}}
 	</a>
 
-	<a class="delete-burger" href="/delete/{{this.id}}">DELETE!</a>
+	<a class="delete-burger btn btn-warning mb-2" href="/delete/{{this.id}}">DELETE!</a>
 </li>

@@ -1,0 +1,13 @@
+#freshBurger{
+    background-color: lightyellow;
+    color: lightcoral;
+}
+.jumbotron{
+    text-align: center;
+    background-color: goldenrod;
+    font-family: 'Russo One', sans-serif;;
+}
+body{
+    background-color: black;
+    color: cornsilk;
+}
